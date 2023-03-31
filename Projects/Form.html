@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registration Form</title>
+    <style>
+      /* Add CSS styling here */
+      form {
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        margin: 0 auto;
+      }
+      label {
+        margin-top: 10px;
+      }
+      input[type="submit"] {
+        margin-top: 20px;
+        background-color: #af904c;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+      input[type="reset"]:hover {
+        background-color: #3e8e41;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center;"> REGISTRATION FORM</h1>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="gender">Gender:</label>
+      
+      <label for="male">Male</label>
+      <input type="radio" id="male" name="gender" value="male" required>
+      <label for="female">Female</label>
+      <input type="radio" id="female" name="gender" value="female" required>
+
+      <label for="country">Country:</label>
+      <select id="country" name="country">
+        <option value="usa">USA</option>
+        <option value="canada">Canada</option>
+        <option value="uk">UK</option>
+        <option value="australia">Australia</option>
+      </select>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message"></textarea>
+
+      <input type="submit" value="Submit">
+      <input type="reset" value="Reset">
+
+    </form>
+
+    <script>
+      // Add JavaScript validation here
+      const form = document.querySelector('form');
+      const nameInput = document.querySelector('#name');
+      const emailInput = document.querySelector('#email');
+      const genderInput = document.querySelector('input[name="gender"]');
+      const countryInput = document.querySelector('#country');
+      const messageInput = document.querySelector('#message');
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        if (nameInput.value === '') {
+          alert('Please enter your name');
+          nameInput.focus();
+          return false;
+        }
+        if (emailInput.value === '') {
+          alert('Please enter your email');
+          emailInput.focus();
+          return false;
+        }
+        if (!genderInput.checked) {
+          alert('Please select your gender');
+          return false;
+        }
+        if (countryInput.value === '') {
+          alert('Please select your country');
+          return false;
+        }
+        if (messageInput.value === '') {
+          alert('Please enter your message');
+          return false;
+        }
+        alert('Form submitted successfully!');
+        form.reset();
+      });
+    </script>
+  </body>
+</html>
