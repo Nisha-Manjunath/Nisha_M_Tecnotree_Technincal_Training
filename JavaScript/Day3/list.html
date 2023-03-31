@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>List Example</title>
+</head>
+<body>
+
+	<ul>
+		<li>Item 1</li>
+		<li>Item 2</li>
+		<li>Item 3</li>
+	</ul>
+
+	<button id="clear-button">Clear Selection</button>
+
+	<script>
+		// Get a reference to the list element
+		const list = document.querySelector('ul');
+
+		// Add an event listener to the list
+		list.addEventListener('click', function(event) {
+			// Get a reference to the clicked list item
+			const listItem = event.target;
+
+			// Remove the "selected" class from all list items
+			const listItems = list.querySelectorAll('li');
+			listItems.forEach(function(item) {
+				item.classList.remove('selected');
+			});
+
+			// Add the "selected" class to the clicked list item
+			listItem.classList.add('selected');
+		});
+
+		// Get a reference to the clear button
+		const clearButton = document.getElementById('clear-button');
+
+		// Add an event listener to the clear button
+		clearButton.addEventListener('click', function() {
+			// Remove the "selected" class from all list items
+			const listItems = list.querySelectorAll('li');
+			listItems.forEach(function(item) {
+				item.classList.remove('selected');
+			});
+		});
+	</script>
+
+	<style>
+		.selected {
+			background-color: rgb(0, 106, 255);
+		}
+	</style>
+
+</body>
+</html>

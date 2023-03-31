@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // get the current date and time
+let now = new Date();
+
+// get the day of the week (0-6)
+let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+let dayOfWeek = days[now.getDay()];
+
+// get the current hour (0-23) and minute (0-59) and second (0-59)
+let hour = now.getHours();
+let minute = now.getMinutes();
+let second = now.getSeconds();
+
+// convert the hour to 12-hour format and get the AM/PM suffix
+let period = hour >= 12 ? 'PM' : 'AM';
+hour = hour % 12 || 12;
+
+// display the day of the week and time in the required format
+console.log(`Today is: ${dayOfWeek}. Current time is: ${hour} ${period} : ${minute} : ${second}`);
+</script>
+</body>
+</html>

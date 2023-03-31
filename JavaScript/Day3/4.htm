@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Button Example</title>
+</head>
+<body>
+    <p id="demo" style="text-align: center;">It's 10:50 on a Friday Morning.</p>
+	<button id="button1">Confirm</button>
+	<button id="button2">Refresh</button>
+    <button id="button3">Toggle Background Color</button>
+
+	<script>
+		// Get references to the button elements
+		const button1 = document.getElementById("button1");
+		const button2 = document.getElementById("button2");
+
+		// Add event listeners to the buttons
+		button1.addEventListener("click", function() {
+			alert("Submitted Succesfully !");
+		});
+
+		button2.addEventListener("click", function() {
+			alert("Are you sure ?");
+		});
+        button3.addEventListener("click", function() {
+			// Get a reference to the body element
+			const body = document.getElementsByTagName("body")[0];
+
+			// Toggle the background color of the body
+			if (body.style.backgroundColor === "white") {
+				body.style.backgroundColor = "lightgray";
+			} else {
+				body.style.backgroundColor = "white";
+			}
+		});
+
+	</script>
+
+</body>
+</html>

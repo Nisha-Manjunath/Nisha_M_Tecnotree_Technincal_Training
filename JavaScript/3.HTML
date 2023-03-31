@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // get the current date
+let now = new Date();
+
+// extract the year, month, and day from the date object
+let year = now.getFullYear();
+let month = now.getMonth() + 1; // month is zero-based, so we add 1
+let day = now.getDate();
+
+// format the date in the desired format
+let separator = "-"; // you can change the separator to "/" if you prefer
+let formattedDate = `${month < 10 ? "0" : ""}${month}${separator}${day < 10 ? "0" : ""}${day}${separator}${year}`;
+
+// display the formatted date
+console.log(`The current date is: ${formattedDate}`);
+
+    </script>
+</body>
+</html>
