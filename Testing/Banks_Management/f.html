@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bank Management</title>
+	<link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1><center>Banking Company</center></h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Add Account</a></li>
+          <li><a href="#account">Review Policy</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="home">
+        <h2>Welcome to  the most trusted bank </h2>
+        <p>Welcome to the effecient banking system in Mysore . Here we make sure to prioritize our customers first</p>
+      </section>
+      <section id="about">
+        <h2>About Us</h2>
+        <p>Our bank has been providing banking solutions to customers for over 50 years. Our experienced team of agents are dedicated to helping you find the right policies for your needs.</p>
+      </section>
+      <section id="services">
+        <h2>Our Services</h2>
+        <ul>
+          <li>Add Account</li>
+          <li>View Account</li>
+          <li>Check the balance</li>
+          <li>Review Policy</li>
+          <li>Add feedback</li>
+        </ul>
+      </section>
+      <section id="account">
+        <h2>Add a new Account</h2>
+        <form action="#" method="post">
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name"><br><br>
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email"><br><br>
+			<label for="policy_type">Account Type:</label>
+			<select id="policy_type" name="policy_type">
+				<option value="auto">Savings Account</option>
+				<option value="home">Currnet Account</option>
+				<option value="health">Deposit Money</option>
+				<option value="life">Withdraw Money</option>
+			</select><br><br>
+			<label for="coverage_amount">Coverage Amount:</label>
+			<input type="number" id="coverage_amount" name="coverage_amount"><br><br>
+			<label for="terms_conditions">Terms and Conditions:</label>
+			<textarea id="terms_conditions" name="terms_conditions"></textarea><br><br>
+			<input type="submit" value="Submit">
+        </form>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2023 banking Company. All rights reserved.</p>
+    </footer>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  </body>
+</html>

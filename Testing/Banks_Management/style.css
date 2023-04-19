@@ -1,0 +1,81 @@
+/* Apply default styles to all elements */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: bisque;
+    background-color: black;
+  }
+  
+  /* Style the header */
+  header {
+    background-color: #003366;
+    color: #fff;
+    padding: 1em;
+  }
+  
+  /* Style the navigation menu */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  nav li {
+    margin: 0 1em;
+  }
+  
+  nav a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Style the main content area */
+  main {
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 0 1em;
+  }
+  
+  h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+  }
+  
+  h2 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+  }
+  
+  p {
+    line-height: 1.5;
+    margin-bottom: 1em;
+  }
+  
+  ul {
+    list-style: none;
+    margin-bottom: 1em;
+  }
+  
+  li {
+    margin-bottom: 0.5em;
+  }
+  
+  /* Style the footer */
+  footer {
+    background-color: #003366;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+  }
+  

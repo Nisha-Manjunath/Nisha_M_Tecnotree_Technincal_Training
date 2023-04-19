@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <style>
+    /* basic styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: black;
+    }
+    form {
+      margin: 50px auto;
+      width: 300px;
+      border: 1px solid #ccc;
+      padding: 200px;
+      border-radius: 5px;
+      color:wheat
+    }
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    button:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
+    }
+    a {
+      color: #4CAF50;
+      text-decoration: none;
+      font-size: 14px;
+      display: block;
+      margin-top: 10px;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+    <div className="container">
+  <form>
+    <h2>Login</h2>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <button id="login-btn" disabled>Login</button>
+    <a href="#" id="forgot-password">Forgot Password?</a>
+    <p id="error-msg" class="error" style="display: none;">Incorrect username or password.</p>
+  </form>
+</div>
+  <script>
+    const usernameInput = document.getElementById("username");
+    const passwordInput = document.getElementById("password");
+    const loginBtn = document.getElementById("login-btn");
+    const forgotPasswordLink = document.getElementById("forgot-password");
+    const errorMsg = document.getElementById("error-msg");
+
+    // test case 1: verify that the username field accepts only valid input and rejects invalid input
+    usernameInput.addEventListener("input", () => {
+      if (!/^[a-zA-Z0-9]+$/.test(usernameInput.value)) {
+        alert("Username can only contain letters and numbers.");
+      } else {
+        usernameInput.setCustomValidity("");
+      }
+    });
+
+    // test case 2: verify that the password field accepts only valid input and rejects invalid input
+    passwordInput.addEventListener("input", () => {
+      if (!/^[a-zA-Z0-9]+$/.test(passwordInput.value)) {
+       alert("Password can only contain letters and numbers.");
+      } else {
+        passwordInput.setCustomValidity("");
+      }
+    });
+
+    // test case 3: verify that the login button is enabled only when both the username and password fields are filled
+    function checkInputs() {
+      if (usernameInput.value && passwordInput.value) {
+        loginBtn.removeAttribute("disabled");
+      } else {
+        loginBtn.setAttribute("disabled", "");
+      }
+    }
+    usernameInput.addEventListener("input", checkInputs);
+    passwordInput.addEventListener("input", checkInputs);
+
+        // test case 4: verify that clicking the forgot password link takes the user to the password reset page
+        forgotPasswordLink.addEventListener("click", (event) => {
+      event.preventDefault();
+      // TODO: redirect to password reset page
+    });
+
+    // test case 5: verify that incorrect login credentials result in an error message
+    const correctUsername = "user";
+    const correctPassword = "password";
+
+    function handleLogin(event) {
+      event.preventDefault();
+      if (usernameInput.value === correctUsername && passwordInput.value === correctPassword) {
+        alert("Login Successfull");
+      } else {
+        alert("Try again");
+      }
+    }
+    loginBtn.addEventListener("click", handleLogin);
+  </script>
+</body>
+</html>
+
